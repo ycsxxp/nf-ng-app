@@ -1,0 +1,41 @@
+.theme-icons { 
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  vertical-align: middle;
+  padding-left: 4px;
+
+  label { 
+    flex: 0 1 auto;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    margin-top: 6px;
+    margin-right: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    .anticon {
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      font-size: 16px;
+      color: #fff;
+    }
+    .areas {
+      display: flex;
+      height: 15px;
+      margin-top: 50%;
+
+      span {
+        background: rgb(255, 255, 255);
+        display: inline-block;
+        width: 50%;
+      }
+    }
+  }
+}

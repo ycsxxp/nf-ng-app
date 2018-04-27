@@ -1,0 +1,43 @@
+.device-profile {
+  height: 100px;
+  background: url(/assets/imgs/bg_intf.gif) no-repeat;
+  border: 1px solid #b1b1b1;
+  border-radius: 2px;
+  width: 420px;
+  height: 85px;
+  margin-bottom: 10px;
+}
+.intf-table {
+  position: absolute;
+  left: 220px;
+  top: 25px;
+  border-collapse:collapse;
+  text-align: center;
+  line-height: 1;
+}
+.intf-table tr>td {
+  color: #000;
+  font-size: 10px;
+}
+
+.demo-device {
+  width: 18px;
+  height: 17px;
+  background-image: url(/assets/imgs/ports_sprite.png);
+}
+/* 接口连通 */
+.demo-device.connected {
+  background-position: 0 -136px;
+}
+/* 接口不连通 */
+.demo-device.disconnected {
+  background-position: 0 -119px;
+}
+
+.list-table-thead>tr>th {
+  background-color: #f7f7f7;
+}
+.list-table-tbody {
+  background-color: rgb(255, 255, 255);
+}
+

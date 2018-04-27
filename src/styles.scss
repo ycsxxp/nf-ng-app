@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #f5f7fa!important;
+
+  /* 滚动条样式 */
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(110, 110, 110);
+    outline: rgb(51, 51, 51) solid 1px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px inset;
+  }
+  /* end */
+}
+
+body.theme-a>.header {
+    background-color: #ac011d !important;
+  }

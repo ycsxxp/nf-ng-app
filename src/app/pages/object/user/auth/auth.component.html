@@ -1,0 +1,131 @@
+<div>
+  <form nz-form>
+    <nz-collapseset [nzBordered]="false">
+      <nz-collapse [nzTitle]="'本地密码设置'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>密码最小长度</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <nz-input name="pass_min" [(ngModel)]="pass_min" [nzType]="'text'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item>密码强度要求</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <nz-select name="pass_level" [nzSize]="'default'" [(ngModel)]="pass_level">
+              <nz-option
+                *ngFor="let option of pass_levels"
+                [nzLabel]="option.label"
+                [nzValue]="option">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item>要求修改默认密码</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <nz-radio-group name="modifyDefaultPwd" [(ngModel)]="modifyDefaultPwd">
+              <label nz-radio-button [nzValue]="'1'"><span>是</span></label>
+              <label nz-radio-button [nzValue]="'0'"><span>否</span></label>
+            </nz-radio-group>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'证书认证设置'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>CA</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <button nz-button [nzType]="'default'" [nzSize]="size" [nzShape]="'default'">
+              <span>设置</span>
+            </button>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>服务器证书</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <button nz-button [nzType]="'default'" [nzSize]="size" [nzShape]="'default'">
+              <span>查看</span>
+            </button>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'认证安全'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>始终启用图形验证码</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <nz-radio-group name="captchaEnable" [(ngModel)]="captchaEnable">
+              <label nz-radio-button [nzValue]="'1'"><span>是</span></label>
+              <label nz-radio-button [nzValue]="'0'"><span>否</span></label>
+            </nz-radio-group>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>启用认证失败策略</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <nz-radio-group name="isEnable" [(ngModel)]="isEnable">
+              <label nz-radio-button [nzValue]="'1'"><span>是</span></label>
+              <label nz-radio-button [nzValue]="'0'"><span>否</span></label>
+            </nz-radio-group>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>允许尝试失败次数</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <nz-input name="times" [(ngModel)]="times" [nzType]="'text'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>多次尝试失败</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="5">
+            <nz-radio-group name="way" [(ngModel)]="way">
+              <label nz-radio [nzValue]="'captcha'">
+                <span>启用图形验证码</span>
+              </label>
+              <label nz-radio [nzValue]="'ban'">
+                <span>
+                  锁定用户
+                  <nz-input name="way_time" [(ngModel)]="way_time" [nzSize]="'small'" style="width: 30px;"></nz-input>
+                  分钟
+                </span>
+              </label>
+              <label nz-radio [nzValue]="'lockIP'">
+                <span>
+                  锁定IP地址
+                  <nz-input name="way_time_ip" [(ngModel)]="way_time_ip" [nzSize]="'small'" style="width: 30px;"></nz-input>
+                  分钟
+                </span>
+              </label>
+              <label nz-radio [nzValue]="'disable'">
+                <span>禁用该用户</span>
+              </label>
+            </nz-radio-group>
+          </div>
+        </div>
+      </nz-collapse>
+    </nz-collapseset>
+    <div nz-row>
+      <div nz-col [nzOffset]="'3'">
+        <button nz-button [nzType]="'primary'" [nzSize]="'default'">确定</button>  
+      </div>
+    </div>
+  </form>
+</div>

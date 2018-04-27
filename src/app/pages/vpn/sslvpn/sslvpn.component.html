@@ -1,0 +1,37 @@
+<div>
+  <nz-tabset [nzSelectedIndex]="nzSelectedIndex" [nzSize]="'small'">
+    <nz-tab>
+        <ng-template  #nzTabHeading>
+          <!-- <i class='anticon anticon-user'></i> -->
+          用户
+        </ng-template>
+        <app-user></app-user>
+      </nz-tab>
+      <nz-tab>
+        <ng-template #nzTabHeading>
+          <!-- <i class='anticon anticon-user'></i> -->
+          用户组
+        </ng-template>
+        <app-user-group></app-user-group>
+      </nz-tab>
+      <nz-tab>  
+        <ng-template #nzTabHeading>
+          <!-- <i class='anticon anticon-user'></i> -->
+          资源组
+        </ng-template>
+      </nz-tab>
+      <nz-tab>
+        <ng-template #nzTabHeading>
+          <!-- <i class='anticon anticon-user'></i> -->
+          资源
+        </ng-template>
+      </nz-tab>
+      <nz-tab>
+        <ng-template #nzTabHeading>
+          <!-- <i class='anticon anticon-user'></i> -->
+          授权访问
+        </ng-template>
+      </nz-tab>
+    </nz-tabset>
+<div>
+  

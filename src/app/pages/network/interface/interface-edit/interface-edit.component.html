@@ -1,0 +1,77 @@
+<div>
+  <nz-spin [nzSpinning]="_isSpinning" [nzTip]="'正在加载数据...'">
+    <form nz-form [nzType]="'horizontal'" [formGroup]="addInfterfaceForm" (ngSubmit)="submitForm($event,addInfterfaceForm.value)">
+      <nz-collapseset [nzBordered]="false">
+        <nz-collapse [nzTitle]="'配置'" [nzActive]="true" >
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label nz-form-item-required>接口名称</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="5" nzHasFeedback>
+              <nz-input formControlName="name" [nzType]="'text'" [nzPlaceHolder]="'请输入接口名称'" [nzSize]="'default'">
+              </nz-input>
+              <div nz-form-explain *ngIf="getFormControl('name').dirty&&getFormControl('name').hasError('required')">{{validationMessages.name.required}}</div>
+              <div nz-form-explain *ngIf="getFormControl('name').dirty&&getFormControl('name').hasError('pattern')">{{ validationMessages.name.pattern }}</div>
+              <div nz-form-explain *ngIf="getFormControl('name').dirty&&getFormControl('name').hasError('duplicated')">{{ validationMessages.name.duplicated }}</div>
+              <div nz-form-explain *ngIf="getFormControl('name').dirty&&getFormControl('name').pending">{{ validationMessages.name.pending }}</div>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label nz-form-item-required>绑定接口</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="5" nzHasFeedback>
+              <nz-input formControlName="bindIntf" [nzType]="'text'" [nzPlaceHolder]="'绑定接口'" [nzSize]="'default'">
+              </nz-input>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label nz-form-item-required>接口类型</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="5">
+              <nz-select formControlName="type" [nzSize]="'default'">
+                <nz-option *ngFor="let item of interfaceTypeOptions" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <!-- <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label nz-form-item-required>安全区</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="5">
+              <nz-select formControlName="zone" [nzSize]="'default'">
+                <nz-option *ngFor="let item of zoneOptions" [nzLabel]="item.label" [nzValue]="item.value"></nz-option>
+              </nz-select>
+            </div>
+          </div> -->
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label nz-form-item-required>IP</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="5" nzHasFeedback>
+              <nz-input formControlName="ip4" [nzType]="'text'" [nzPlaceHolder]="'IP地址'" [nzSize]="'default'">
+              </nz-input>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label nz-form-item-required>VLAN</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="5" nzHasFeedback>
+              <nz-input formControlName="vlan" [nzType]="'text'" [nzPlaceHolder]="'请输入VLAN'" [nzSize]="'default'">
+              </nz-input>
+              <div nz-form-explain *ngIf="getFormControl('vlan').dirty&&getFormControl('vlan').hasError('required')">{{validationMessages.vlan.required}}</div>
+            </div>
+          </div>
+        </nz-collapse>
+      </nz-collapseset>
+      <div class="submit-btn-row" nz-form-item nz-row [nzType]="'flex'" [nzJustify]="'center'">
+        <div nz-col nz-form-control>
+          <button nz-button [nzType]="'primary'" [disabled]="!addInfterfaceForm.valid">确认</button>
+          <button nz-button (click)="cancle($event)">取消</button>
+        </div>
+      </div>
+    </form>
+  </nz-spin>
+</div>

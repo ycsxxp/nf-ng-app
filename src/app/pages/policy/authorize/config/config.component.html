@@ -1,0 +1,76 @@
+<div>
+  <nz-collapseset [nzBordered]="false">
+    <nz-collapse [nzTitle]="'基本配置'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <form nz-form>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>认证重定向端口</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <span>4430(https)</span>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>认证重定向地址</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-input style="width: 210px;" name="card" [nzSize]="'default'" [(ngModel)]="card" [nzPlaceHolder]="'请输入'" ></nz-input>
+            <nz-tooltip [nzTitle]="'填写资产IP后，将生成对应的资产报表'" [nzPlacement]="'right'" [nzTrigger]="'hover'">
+              <button nz-button nz-tooltip [nzType]="'primary'" [nzSize]="'small'" [nzShape]="'circle'">
+                <i class="anticon anticon-question"></i>
+              </button>
+            </nz-tooltip>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>认证持续时间(分钟)</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-input style="width: 210px;" name="time" [nzSize]="'default'" [(ngModel)]="time" [nzPlaceHolder]="'请输入'" ></nz-input>
+            <nz-tooltip [nzTitle]="'通过认证后的用户在线时间超过该值后，需要重新认证。
+如果此值为0，将不限制用户的在线时间，用户不需要重新认证。
+时间范围为0-1440 。'" [nzPlacement]="'right'" [nzTrigger]="'hover'">
+              <button nz-button nz-tooltip [nzType]="'primary'" [nzSize]="'small'" [nzShape]="'circle'">
+                <i class="anticon anticon-question"></i>
+              </button>
+            </nz-tooltip>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-control nz-col [nzSpan]="21" [nzOffset]="3">
+            <button nz-button [nzType]="'primary'" [nzSize]="'default'">确定</button>
+          </div>
+        </div>
+      </form>
+    </nz-collapse>
+    <nz-collapse [nzTitle]="'IP/MAC绑定配置'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <nz-table #nzTable [nzDataSource]="_dataSet" [nzSize]="'small'" [nzBordered]="true" [nzIsPagination]="false">
+        <thead nz-thead>
+          <tr>
+            <th nz-th *ngFor="let item of tableHeader">
+              <span>{{ item.title }}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody nz-tbody>
+          <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+            <td nz-td>{{data.domain}}</td>
+            <td nz-td>
+              <nz-select style="width: 100px;" [(ngModel)]="data.bind_type" nzAllowClear>
+                <nz-option
+                  *ngFor="let option of bind_types"
+                  [nzLabel]="option.label"
+                  [nzValue]="option.value">
+                </nz-option>
+              </nz-select>
+            </td>
+            <td nz-td>{{data.bind_count}}</td>
+            <td nz-td>{{data.action}}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </nz-collapse>
+  </nz-collapseset>
+</div>

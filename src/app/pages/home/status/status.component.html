@@ -1,0 +1,93 @@
+<div style="background: #ECECEC;padding:10px;">
+      <div nz-row [nzGutter]="8">
+        <div nz-col [nzSpan]="12">
+          <nz-card>
+            <ng-template #title>
+              系统状态2
+            </ng-template>
+            <ng-template #extra>
+        	</ng-template>
+            <ng-template #body>
+                <app-base-status></app-base-status>
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-card>
+            <ng-template #title>
+              流量监控
+            </ng-template>
+            <ng-template #extra>
+          		<a>More</a>
+        	</ng-template>
+            <ng-template #body>
+              <app-if-traffic></app-if-traffic>
+              <!-- <echarts-ng2 [option]="option" [theme]="'dark'"  [style]="{'width': '75%', 'height': '250px'}"></echarts-ng2> -->
+            </ng-template>
+          </nz-card>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="8" style="height: 8px;"></div>
+      <div nz-row [nzGutter]="8">
+        <div nz-col [nzSpan]="12">
+          <nz-card>
+            <ng-template #title>
+              应用流量
+            </ng-template>
+            <ng-template #extra>
+          		<a>More</a>
+        	</ng-template>
+            <ng-template #body>
+              <app-app-traffic></app-app-traffic>
+              <!-- <echarts-ng2 [option]="option" [theme]="'dark'"  [style]="{'width': '75%', 'height': '250px'}"></echarts-ng2> -->
+            </ng-template>
+          </nz-card>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-card>
+            <ng-template #title>
+              用户流量
+            </ng-template>
+            <ng-template #extra>
+          		<a>More</a>
+        	</ng-template>
+            <ng-template #body>
+            <app-user-traffic></app-user-traffic>
+              <!-- <echarts-ng2 [option]="option" [theme]="'dark'"  [style]="{'width': '75%', 'height': '250px'}"></echarts-ng2> -->
+            </ng-template>
+          </nz-card>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="8" style="height: 8px;"></div>
+      <div nz-row [nzGutter]="8">
+        <div nz-col [nzSpan]="24">
+          <nz-card>
+            <ng-template #title>
+              接口信息
+            </ng-template>
+            <ng-template #extra>
+          		<a>More</a>
+        	</ng-template>
+            <ng-template #body>
+              <app-interface-info></app-interface-info>
+            </ng-template>
+          </nz-card>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="8" style="height: 8px;"></div>
+       <div nz-row [nzGutter]="8">
+        <div nz-col [nzSpan]="24">
+          <nz-card>
+            <ng-template #title>
+               IPSEC隧道状态 
+            </ng-template>
+            <ng-template #extra>
+          		<a>More</a>
+        	</ng-template>
+            <ng-template #body>
+              <app-ipsec-traffic></app-ipsec-traffic>
+            </ng-template>
+          </nz-card>
+        </div>
+      </div>
+    </div>

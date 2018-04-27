@@ -1,0 +1,62 @@
+<div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-bottom: 5px;">
+    <div nz-col [nzSpan]="4" style="text-align: right;padding-right: 10px;">
+      <nz-switch (click)="switchValueClick()" [(ngModel)]="switchValue">
+        <span checked>自动刷新</span>
+        <span unchecked>自动刷新</span>
+      </nz-switch>
+      <nz-select style="width: 60px;" [(ngModel)]="selectedtimeOption" nzAllowClear>
+        <nz-option
+          *ngFor="let option of timeOption"
+          [nzLabel]="option.label"
+          [nzValue]="option">
+        </nz-option>
+      </nz-select>
+    </div>
+    <div nz-col [nzSpan]="2" style="text-align: right;">
+      <button nz-button [nzType]="'primary'" (click)="refresh()"><span>手动刷新</span></button>
+    </div>
+    <div nz-col [nzSpan]="2" style="text-align: right;">
+      <span>在线人数:0</span>
+    </div>
+  </div>
+    <div nz-row>
+    <nz-table #nzTable 
+      [nzAjaxData]="_dataSet"
+      [nzLoading]="_loading" 
+      [nzBordered]="true" 
+      [nzIsPagination]="false"
+      [nzSize]="'small'">
+    <thead nz-thead>
+      <tr>
+        <th nz-th><span>登录用户</span></th>
+        <th nz-th><span>认证域</span></th>
+        <th nz-th><span>登录IP</span></th>
+        <th nz-th><span>在线时间</span></th>
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+        <td nz-td>{{data.name}}</td>
+        <td nz-td><a>{{data.domain}}</a></td>
+        <td nz-td>{{data.ip}}</td>
+        <td nz-td>{{data.time}}</td>
+      </tr>
+    </tbody>
+    </nz-table>
+  </div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-top: 5px;">
+    <nz-pagination 
+    (nzPageSizeChange) ="nzPageSizeChange($event)"
+    (nzPageIndexChange) ="nzPageIndexChange($event)"
+    (nzPageIndexClickChange) ="nzPageIndexClickChange($event)"
+    [(nzPageIndex)]="_current"
+    [(nzPageSize)]='_pageSize'
+    [nzTotal]="_total" 
+    [nzSize]="'small'" 
+    nzShowSizeChanger 
+    nzShowQuickJumper
+    ></nz-pagination>
+  </div>
+<div>
+  

@@ -1,0 +1,130 @@
+<div>
+  <div nz-row style="margin-bottom: 10px;">
+    <nz-tabset>
+      <nz-tab>
+        <ng-template #nzTabHeading>操作系统</ng-template>
+        <form nz-form>
+          <div nz-row>
+            <div nz-col [nzSpan]="8">
+              <div nz-form-item nz-row class="form" *ngFor="let item of os_windows; let i=index ">
+                <div nz-form-label nz-col [nzSpan]="12"><label>{{ item.name }}</label></div>
+                <div nz-form-control nz-col [nzSpan]="12">
+                  <nz-select style="width: 120px;" name="level_{{ item.name.split(' ').join('_') }}" [nzSize]="'default'" [(ngModel)]="item.level">
+                    <nz-option
+                      *ngFor="let option of levels"
+                      [nzLabel]="option.label"
+                      [nzValue]="option.value">
+                    </nz-option>
+                  </nz-select> 
+                </div>
+              </div>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <div nz-form-item nz-row class="form" *ngFor="let item of os_linux; let i=index ">
+                <div nz-form-label nz-col [nzSpan]="12"><label>{{ item.name }}</label></div>
+                <div nz-form-control nz-col [nzSpan]="12">
+                  <nz-select style="width: 120px;" name="level_{{ item.name.split(' ').join('_') }}" [nzSize]="'default'" [(ngModel)]="item.level">
+                    <nz-option
+                      *ngFor="let option of levels"
+                      [nzLabel]="option.label"
+                      [nzValue]="option.value">
+                    </nz-option>
+                  </nz-select> 
+                </div>
+              </div>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <div nz-form-item nz-row class="form" *ngFor="let item of os_unix; let i=index ">
+                <div nz-form-label nz-col [nzSpan]="12"><label>{{ item.name }}</label></div>
+                <div nz-form-control nz-col [nzSpan]="12">
+                  <nz-select style="width: 120px;" name="level_{{ item.name.split(' ').join('_') }}" [nzSize]="'default'" [(ngModel)]="item.level">
+                    <nz-option
+                      *ngFor="let option of levels"
+                      [nzLabel]="option.label"
+                      [nzValue]="option.value">
+                    </nz-option>
+                  </nz-select> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div nz-row [nzType]="'flex'" [nzJustify]="'center'">
+            <button nz-button [nzType]="'primary'" [nzSize]="'default'">确定</button>
+          </div>
+        </form>
+      </nz-tab>
+      <nz-tab>
+        <ng-template #nzTabHeading>浏览器</ng-template>
+        <form nz-form>
+          <div nz-row>
+            <div nz-col [nzSpan]="8">
+              <div nz-form-item nz-row class="form" *ngFor="let item of browser_ie_other; let i=index ">
+                <div nz-form-label nz-col [nzSpan]="10"><label>{{ item.name }}</label></div>
+                <div nz-form-control nz-col [nzSpan]="14">
+                  <nz-select style="width: 120px;" name="level_{{ item.name.split(' ').join('_') }}" [nzSize]="'default'" [(ngModel)]="item.level">
+                    <nz-option
+                      *ngFor="let option of levels"
+                      [nzLabel]="option.label"
+                      [nzValue]="option.value">
+                    </nz-option>
+                  </nz-select> 
+                </div>
+              </div>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <div nz-form-item nz-row class="form" *ngFor="let item of browser_new; let i=index ">
+                <div nz-form-label nz-col [nzSpan]="10"><label>{{ item.name }}</label></div>
+                <div nz-form-control nz-col [nzSpan]="14">
+                  <nz-select style="width: 120px;" name="level_{{ item.name.split(' ').join('_') }}" [nzSize]="'default'" [(ngModel)]="item.level">
+                    <nz-option
+                      *ngFor="let option of levels"
+                      [nzLabel]="option.label"
+                      [nzValue]="option.value">
+                    </nz-option>
+                  </nz-select> 
+                </div>
+              </div>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <div nz-form-item nz-row class="form" *ngFor="let item of browser_ie; let i=index ">
+                <div nz-form-label nz-col [nzSpan]="10"><label>{{ item.name }}</label></div>
+                <div nz-form-control nz-col [nzSpan]="14">
+                  <nz-select style="width: 120px;" name="level_{{ item.name.split(' ').join('_') }}" [nzSize]="'default'" [(ngModel)]="item.level">
+                    <nz-option
+                      *ngFor="let option of levels"
+                      [nzLabel]="option.label"
+                      [nzValue]="option.value">
+                    </nz-option>
+                  </nz-select> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div nz-row [nzType]="'flex'" [nzJustify]="'center'">
+            <button nz-button [nzType]="'primary'" [nzSize]="'default'">确定</button>
+          </div>
+        </form>
+      </nz-tab>
+      <nz-tab>
+        <ng-template #nzTabHeading>杀毒软件</ng-template>
+        <form nz-form>
+          <div nz-form-item nz-row class="avsoft-form-item" *ngFor="let item of avsoft; let i=index ">
+            <div nz-form-label nz-col [nzSpan]="12"><label>{{ item.name }}</label></div>
+            <div nz-form-control nz-col [nzSpan]="12">
+              <nz-select name="level_{{ item.name.split(' ').join('_') }}" [nzSize]="'default'" [(ngModel)]="item.level">
+                <nz-option
+                  *ngFor="let option of levels"
+                  [nzLabel]="option.label"
+                  [nzValue]="option.value">
+                </nz-option>
+              </nz-select> 
+            </div>
+          </div>
+          <div nz-row style="float: left;width: 100%;text-align: center;">
+            <button nz-button [nzType]="'primary'" [nzSize]="'default'">确定</button>
+          </div>
+        </form>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>

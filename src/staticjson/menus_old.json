@@ -1,0 +1,826 @@
+[
+  {
+    "text": "首页",
+    "child": [
+      {
+        "text": "配置向导",
+        "icon": "anticon-home",
+        "link": "/home/configguide"
+      },{
+        "text": "状态",
+        "icon": "anticon-user",
+        "link": "home/status"
+      },{
+        "text": "事件关联分析",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "带宽",
+            "link": ""
+          },{
+            "text": "威胁",
+            "link": ""
+          },{
+            "text": "策略",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "安全事件",
+        "icon": "anticon-edit",
+        "child": [
+          {
+            "text": "入侵防护事件",
+            "link": "event/ips"
+          },{
+            "text": "URL过滤事件",
+            "link": "event/ws"
+          },{
+            "text": "防病毒事件",
+            "link": "event/av"
+          },{
+            "text": "内容过滤事件",
+            "link": "event/scm"
+          },{
+            "text": "高级威胁防护",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "在线资产",
+        "icon": "anticon-user",
+        "link": "asset/monitor"
+      },{
+        "text": "无线管理",
+        "icon": "anticon-user",
+        "link": "home/wireless"
+      },{
+        "text": "流量分析",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "流量",
+            "link": ""
+          },{
+            "text": "应用流量监控",
+            "link": ""
+          },{
+            "text": "IP流量监控",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "在线用户",
+        "icon": "anticon-user",
+        "link": "/home/online"
+      },{
+        "text": "服务器状态",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "服务器健康状况",
+            "link": "/home/healthStatus"
+          },{
+            "text": "服务器流量状况",
+            "link": "/home/serverTraffic"
+          }
+        ]
+      }
+    ]
+  },{
+    "text": "系统",
+    "child": [
+      {
+        "text": "系统升级",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "更新",
+            "link": ""
+          },{
+            "text": "在线升级",
+            "link": ""
+          },{
+            "text": "离线升级",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "备份恢复",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "备份",
+            "link": ""
+          },{
+            "text": "恢复",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "系统配置",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "引擎",
+            "link": ""
+          },{
+            "text": "分片重组",
+            "link": ""
+          },{
+            "text": "专业参数",
+            "link": ""
+          },{
+            "text": "REST API配置",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "安全中心",
+        "icon": "anticon-user",
+        "link": ""
+      },{
+        "text": "SNMP",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "Agent访问控制",
+            "link": ""
+          },{
+            "text": "Trap",
+            "link": ""
+          },{
+            "text": "系统配置信息",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "帐号管理",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "帐号管理",
+            "link": ""
+          },{
+            "text": "参数配置",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "诊断工具",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "Ping",
+            "link": ""
+          },{
+            "text": "TraceRoute",
+            "link": ""
+          },{
+            "text": "网络连接状态",
+            "link": ""
+          },{
+            "text": "网卡状态",
+            "link": ""
+          },{
+            "text": "汇聚状态",
+            "link": ""
+          },{
+            "text": "转发信息",
+            "link": ""
+          },{
+            "text": "回放测试",
+            "link": ""
+          },{
+            "text": "专家诊断",
+            "link": ""
+          },{
+            "text": "抓包",
+            "link": ""
+          },{
+            "text": "报文示踪",
+            "link": ""
+          },{
+            "text": "会话信息",
+            "link": ""
+          },{
+            "text": "组播路由信息",
+            "link": ""
+          },{
+            "text": "HA",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "证书管理",
+        "icon": "anticon-user",
+        "link": ""
+      },{
+        "text": "系统控制",
+        "icon": "anticon-user",
+        "link": ""
+      }
+    ]
+  },{
+    "text": "网络",
+    "icon": "anticon-user",
+    "child": [
+      {
+        "text": "接口",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "接口",
+            "link": ""
+          },{
+            "text": "可管理属性",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "安全区",
+        "icon": "anticon-user",
+        "link": ""
+      },{
+        "text": "虚拟线",
+        "icon": "anticon-user",
+        "link": ""
+      },{
+        "text": "交换",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "MAC表",
+            "link": ""
+          },{
+            "text": "RSTP",
+            "link": ""
+          },{
+            "text": "MSTP",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "路由",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "静态路由",
+            "link": ""
+          },{
+            "text": "策略路由",
+            "link": ""
+          },{
+            "text": "链路探测",
+            "link": ""
+          },{
+            "text": "OSPF",
+            "link": ""
+          },{
+            "text": "RIP",
+            "link": ""
+          },{
+            "text": "BGP",
+            "link": ""
+          },{
+            "text": "ISP信息",
+            "link": ""
+          },{
+            "text": "ISP路由",
+            "link": ""
+          },{
+            "text": "反向路由",
+            "link": ""
+          },{
+            "text": "ARP表",
+            "link": ""
+          },{
+            "text": "组播配置",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "PPPoE",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "PPPoE链路",
+            "link": ""
+          },{
+            "text": "链路状态",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "DHCP服务",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "DHCP服务",
+            "link": ""
+          },{
+            "text": "DHCP中继",
+            "link": ""
+          },{
+            "text": "租约列表",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "DNS服务",
+        "icon": "anticon-user",
+        "link": ""
+      },{
+        "text": "IPSEC VPN",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "IPSEC隧道配置",
+            "link": ""
+          },{
+            "text": "IPSEC状态",
+            "link": ""
+          },{
+            "text": "IPSEC用户",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "SSL VPN",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "配置",
+            "link": ""
+          },{
+            "text": "资源",
+            "link": ""
+          },{
+            "text": "资源组",
+            "link": ""
+          },{
+            "text": "授权访问",
+            "link": ""
+          },{
+            "text": "网关到网关",
+            "link": ""
+          },{
+            "text": "SSLVPN状态",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "L2TP",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "L2TP配置",
+            "link": ""
+          },{
+            "text": "L2TP状态",
+            "link": ""
+          },{
+            "text": "L2TP用户",
+            "link": ""
+          }
+        ]
+      },{
+        "text": "高可用性",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "基本配置",
+            "link": ""
+          },{
+            "text": "虚拟线配置",
+            "link": ""
+          },{
+            "text": "虚拟路由冗余配置",
+            "link": ""
+          },{
+            "text": "二层配置",
+            "link": ""
+          },{
+            "text": "非对称路由支持",
+            "link": ""
+          }
+        ]
+      }
+    ]
+  },{
+    "text": "策略",
+    "icon": "anticon-user",
+    "child": [
+      {
+        "text": "安全策略",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "安全策略",
+            "link": "/policy/fw/rule"
+          },{
+            "text": "二层协议控制",
+            "link": "/policy/fw/layerctrl"
+          }
+        ]
+      },{
+        "text": "NAT",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "源NAT",
+            "link": "/policy/nat/snat"
+          },{
+            "text": "目的NAT",
+            "link": "/policy/nat/dnat"
+          }
+        ]
+      },{
+        "text": "高级威胁防护",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "高级威胁防护",
+            "link": "/policy/atp/config"
+          },{
+            "text": "联动状态",
+            "link": "/policy/atp/status"
+          }
+        ]
+      },{
+        "text": "IPMAC绑定",
+        "icon": "anticon-user",
+        "link": "/policy/ipmacbind"
+      },{
+        "text": "用户认证",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "用户认证策略",
+            "link": "/policy/authorize/rule"
+          },{
+            "text": "认证设置",
+            "link": "/policy/authorize/config"
+          }
+        ]
+      },{
+        "text": "资产识别",
+        "icon": "anticon-user",
+        "link": "/policy/asset"
+      },{
+        "text": "流量管理",
+        "icon": "anticon-user",
+        "link": "/policy/bwm"
+      },{
+        "text": "DoS防护",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "Flood防护",
+            "link": "/policy/dos/flood"
+          },{
+            "text": "PortScan防护",
+            "link": "/policy/dos/portscan"
+          },{
+            "text": "PINGSweep防护",
+            "link": "/policy/dos/pingsweep"
+          },{
+            "text": "ARPSpoof防护",
+            "link": "/policy/dos/arpspoof"
+          }
+        ]
+      },{
+        "text": "信誉",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "信誉",
+            "link": "/policy/reputation/config"
+          },{
+            "text": "信誉查询",
+            "link": "/policy/reputation/search"
+          }
+        ]
+      },{
+        "text": "源IP联动封锁",
+        "icon": "anticon-user",
+        "link": "/policy/siplock/rule"
+      },{
+        "text": "外部联动",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "RSAS联动",
+            "link": "/policy/linkage/rsaslink"
+          },{
+            "text": "终端安全联动",
+            "link": "/policy/linkage/kslink"
+          },{
+            "text": "堡垒机联动",
+            "link": "/policy/linkage/saslink"
+          },{
+            "text": "IDS联动",
+            "link": "/policy/linkage/idslink"
+          },{
+            "text": "云清洗联动",
+            "link": "/policy/linkage/cwlink"
+          }
+        ]
+      },{
+        "text": "透明代理",
+        "icon": "anticon-user",
+        "link": "/policy/proxy/rule"
+      }
+    ]
+  },{
+    "text": "对象",
+    "icon": "anticon-user",
+    "child": [
+      {
+        "text": "安全模板",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "入侵防护",
+            "link": "/object/profile/ips"
+          },{
+            "text": "URL过滤",
+            "link": "/object/profile/urlfilter"
+          },{
+            "text": "防病毒",
+            "link": "/object/profile/av"
+          },{
+            "text": "内容过滤",
+            "link": "/object/profile/scm"
+          },{
+            "text": "无线管理",
+            "link": "/object/profile/wireless"
+          },{
+            "text": "组",
+            "link": "/object/profile/group"
+          }
+        ]
+      },{
+        "text": "网络",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "子网",
+            "link": "/object/network/net"
+          },{
+            "text": "节点",
+            "link": "/object/network/node"
+          },{
+            "text": "MAC地址",
+            "link": "/object/network/mac"
+          },{
+            "text": "IP池",
+            "link": "/object/network/ippool"
+          },{
+            "text": "域名",
+            "link": "/object/network/domain"
+          },{
+            "text": "组",
+            "link": "/object/network/group"
+          }
+        ]
+      },{
+        "text": "用户",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "用户",
+            "link": "/object/user/user"
+          },{
+            "text": "用户组",
+            "link": "/object/user/group"
+          },{
+            "text": "域",
+            "link": "/object/user/domain"
+          },{
+            "text": "认证设置",
+            "link": "/object/user/auth"
+          }
+        ]
+      },{
+        "text": "服务",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "系统",
+            "link": "/object/service/system"
+          },{
+            "text": "自定义",
+            "link": "/object/service/custom"
+          },{
+            "text": "组",
+            "link": "/object/service/group"
+          }
+        ]
+      },{
+        "text": "资产",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "资产列表",
+            "link": "/object/asset/asset"
+          },{
+            "text": "风险定义",
+            "link": "/object/asset/level"
+          }
+        ]
+      },{
+        "text": "应用",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "应用",
+            "link": "/object/app/app"
+          },{
+            "text": "自定义应用",
+            "link": "/object/app/custom"
+          },{
+            "text": "过滤器",
+            "link": "/object/app/filter"
+          },{
+            "text": "应用组",
+            "link": "/object/app/group"
+          },{
+            "text": "应用超时",
+            "link": "/object/app/timeout"
+          }
+        ]
+      },{
+        "text": "事件",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "系统分组",
+            "link": "/object/event/system"
+          },{
+            "text": "自定义规则",
+            "link": "/object/event/rule"
+          },{
+            "text": "自定义分组",
+            "link": "/object/event/custom"
+          },{
+            "text": "组",
+            "link": "/object/event/group"
+          }
+        ]
+      },{
+        "text": "内容",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "自定义",
+            "link": "/object/scm/custom"
+          },{
+            "text": "组",
+            "link": "/object/scm/group"
+          },{
+            "text": "关键字",
+            "link": "/object/scm/keyword"
+          }
+        ]
+      },{
+        "text": "时间",
+        "icon": "anticon-user",
+        "child": [
+          {
+            "text": "自定义",
+            "link": "/object/time/custom"
+          },{
+            "text": "组",
+            "link": "/object/time/group"
+          }
+        ]
+      },{
+        "text": "流量通道",
+        "icon": "anticon-user",
+        "link": "/object/bwm"
+      }
+    ]
+  },{
+    "text": "日志",
+    "icon": "anticon-file-text",
+    "child": [
+      {
+        "text": "防火墙",
+        "icon": "anticon-file-text",
+        "link": "/log/fw"
+      },{
+        "text": "入侵防护",
+        "icon": "anticon-file-text",
+        "link": "/log/ips"
+      },{
+        "text": "URL过滤",
+        "icon": "anticon-file-text",
+        "link": "/log/ws"
+      },{
+        "text": "防病毒",
+        "icon": "anticon-file-text",
+        "link": "/log/av"
+      },{
+        "text": "内容过滤",
+        "icon": "anticon-file-text",
+        "link": "/log/scm"
+      },{
+        "text": "信誉",
+        "icon": "anticon-file-text",
+        "link": "/log/reputation"
+      },{
+        "text": "高级威胁防护",
+        "icon": "anticon-file-text",
+        "link": "/log/atp"
+      },{
+        "text": "无线管理",
+        "icon": "anticon-file-text",
+        "link": "/log/wireless"
+      },{
+        "text": "用户管理",
+        "icon": "anticon-file-text",
+        "child": [
+          {
+            "text": "认证日志",
+            "link": "/log/authorize"
+          },{
+            "text": "防火墙状态",
+            "link": "/log/authorize-status"
+          }
+        ]
+      },{
+        "text": "运行日志",
+        "icon": "anticon-file-text",
+        "child": [
+          {
+            "text": "系统调试日志",
+            "link": "/log/netrun"
+          },{
+            "text": "SSLVPN日志",
+            "link": "/log/ssl"
+          },{
+            "text": "IPSECVPN日志",
+            "link": "/log/ipsec"
+          }
+        ]
+      },{
+        "text": "系统日志",
+        "icon": "anticon-file-text",
+        "link": "/log/audit"
+      }
+    ]
+  },{
+    "text": "报表",
+    "icon": "anticon-user",
+    "child": [
+      {
+        "text": "防火墙",
+        "icon": "anticon-area-chart",
+        "link": "report/fw"
+      },{
+        "text": "接口流量",
+        "icon": "anticon-area-chart",
+        "link": "report/interface"
+      },{
+        "text": "入侵防护",
+        "icon": "anticon-area-chart",
+        "link": "report/ips"
+      },{
+        "text": "URL过滤",
+        "icon": "anticon-area-chart",
+        "link": "report/ws"
+      },{
+        "text": "防病毒",
+        "icon": "anticon-area-chart",
+        "link": "report/av"
+      },{
+        "text": "内容过滤",
+        "icon": "anticon-area-chart",
+        "link": "report/scm"
+      },{
+        "text": "资产",
+        "icon": "anticon-area-chart",
+        "child": [
+          {
+            "text": "资产风险报表",
+            "link": "report/asset"
+          }
+        ]
+      },{
+        "text": "RSAS联动",
+        "icon": "anticon-area-chart",
+        "link": "report/rsaslink"
+      }
+    ]
+  },{
+    "text": "帮助",
+    "icon": "anticon-user",
+    "child": [
+      {
+        "text": "规则查询",
+        "link": ""
+      }
+    ]
+  }
+]

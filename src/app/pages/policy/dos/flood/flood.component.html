@@ -1,0 +1,266 @@
+<div>
+  <form nz-form>
+    <nz-collapseset [nzBordered]="false">
+      <nz-collapse [nzTitle]="'PING Flood'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="pingflood_check" [(ngModel)]="pingflood_check">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测阈值(包数)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!pingflood_check" name="pingflood_limit_count" [(ngModel)]="pingflood_limit_count" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测周期(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!pingflood_check" name="pingflood_limit_time" [(ngModel)]="pingflood_limit_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>复位时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!pingflood_check" name="pingflood_prune_quanta" [(ngModel)]="pingflood_prune_quanta" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-label nz-col [nzSpan]="3" [nzOffset]="2">
+            <label nz-form-item-required>自动保护</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!pingflood_check" name="pingflood_protect" [(ngModel)]="pingflood_protect">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>保护时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!pingflood_protect || !pingflood_check" name="pingflood_protect_time" [(ngModel)]="pingflood_protect_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>限制流量(pps)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!pingflood_protect || !pingflood_check" name="pingflood_protect_pps_limit" [(ngModel)]="pingflood_protect_pps_limit" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'UDP Flood'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="udpflood_check" [(ngModel)]="udpflood_check">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测阈值(包数)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!udpflood_check" name="udpflood_limit_count" [(ngModel)]="udpflood_limit_count" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测周期(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!udpflood_check" name="udpflood_limit_time" [(ngModel)]="udpflood_limit_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>复位时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!udpflood_check" name="udpflood_prune_quanta" [(ngModel)]="udpflood_prune_quanta" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-label nz-col [nzSpan]="3" [nzOffset]="2">
+            <label nz-form-item-required>自动保护</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!udpflood_check" name="udpflood_protect" [(ngModel)]="udpflood_protect">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>保护时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!udpflood_protect || !udpflood_check" name="udpflood_protect_time" [(ngModel)]="udpflood_protect_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>限制流量(pps)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!udpflood_protect || !udpflood_check" name="udpflood_protect_pps_limit" [(ngModel)]="udpflood_protect_pps_limit" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'SYN Flood'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="synflood_check" [(ngModel)]="synflood_check">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测阈值(包数)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!synflood_check" name="synflood_limit_count" [(ngModel)]="synflood_limit_count" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测周期(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!synflood_check" name="synflood_limit_time" [(ngModel)]="synflood_limit_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>复位时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!synflood_check" name="synflood_prune_quanta" [(ngModel)]="synflood_prune_quanta" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-label nz-col [nzSpan]="3" [nzOffset]="2">
+            <label nz-form-item-required>自动保护</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!synflood_check" name="synflood_protect" [(ngModel)]="synflood_protect">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>保护时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!synflood_protect || !synflood_check" name="synflood_protect_time" [(ngModel)]="synflood_protect_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>限制流量(pps)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!synflood_protect || !synflood_check" name="synflood_protect_pps_limit" [(ngModel)]="synflood_protect_pps_limit" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'DNS Reply Flood'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="dnsreplyflood_check" [(ngModel)]="dnsreplyflood_check">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测阈值(包数)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreplyflood_check" name="dnsreplyflood_limit_count" [(ngModel)]="dnsreplyflood_limit_count" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测周期(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreplyflood_check" name="dnsreplyflood_limit_time" [(ngModel)]="dnsreplyflood_limit_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>复位时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreplyflood_check" name="dnsreplyflood_prune_quanta" [(ngModel)]="dnsreplyflood_prune_quanta" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-label nz-col [nzSpan]="3" [nzOffset]="2">
+            <label nz-form-item-required>自动保护</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!dnsreplyflood_check" name="dnsreplyflood_protect" [(ngModel)]="dnsreplyflood_protect">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>保护时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreplyflood_protect || !dnsreplyflood_check" name="dnsreplyflood_protect_time" [(ngModel)]="dnsreplyflood_protect_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>限制流量(pps)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreplyflood_protect || !dnsreplyflood_check" name="dnsreplyflood_protect_pps_limit" [(ngModel)]="dnsreplyflood_protect_pps_limit" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'DNS Req Flood'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="dnsreqflood_check" [(ngModel)]="dnsreqflood_check">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测阈值(包数)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreqflood_check" name="dnsreqflood_limit_count" [(ngModel)]="dnsreqflood_limit_count" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测周期(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreqflood_check" name="dnsreqflood_limit_time" [(ngModel)]="dnsreqflood_limit_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>复位时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreqflood_check" name="dnsreqflood_prune_quanta" [(ngModel)]="dnsreqflood_prune_quanta" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-form-label nz-col [nzSpan]="3" [nzOffset]="2">
+            <label nz-form-item-required>自动保护</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!dnsreqflood_check" name="dnsreqflood_protect" [(ngModel)]="dnsreqflood_protect">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>保护时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreqflood_protect || !dnsreqflood_check" name="dnsreqflood_protect_time" [(ngModel)]="dnsreqflood_protect_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>限制流量(pps)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!dnsreqflood_protect || !dnsreqflood_check" name="dnsreqflood_protect_pps_limit" [(ngModel)]="dnsreqflood_protect_pps_limit" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+      </nz-collapse>
+    </nz-collapseset>
+    <div nz-row style="margin-top: 20px;">
+      <div nz-col [nzSpan]="2" style="padding: 0 16px;">
+        <button nz-button [nzType]="'primary'" (click)="refresh()"><span>确定</span></button>
+      </div>
+    </div>
+  </form>
+</div>

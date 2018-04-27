@@ -1,0 +1,49 @@
+<div class="aside-inner" id="aside-inner" #sidebar>
+  <ul class="nav" >
+    <ng-container *ngFor="let item of menus">
+      <!-- 常用模块 -->
+      <li *ngIf="item.favorite" [routerLinkActive]="['nav-item-selected']" [class.nav-submenu-open]="item._open">
+        <a class="nav-sub-title" (click)="toggleOpen(item)">
+          <i class="anticon {{ item.icon }}"></i>
+          <span>{{ item.text }}</span>
+        </a>
+        <ul class="nav nav-sub" *ngIf="item.child">
+          <ng-container *ngFor="let child of item.child">
+            <li [routerLinkActive]="['nav-item-selected']">
+              <a [routerLink]="child.link" [target]="child.target" >{{ child.text }}</a>
+              <i class="favorite anticon anticon-star" *ngIf="child.isFavorite" (click)="removeFavorite(child)"></i>
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+      <!-- 非常用模块 -->
+      <li *ngIf="!item.favorite" [routerLinkActive]="['nav-item-selected']" [class.nav-submenu-open]="item._open">
+        <a class="nav-sub-title" (click)="toggleOpen(item)">
+          <i class="anticon {{ item.icon }}"></i>
+          <span>{{ item.text }}</span>
+        </a>
+        <ul class="nav nav-sub" *ngIf="item.child">
+          <ng-container *ngFor="let child of item.child">
+            <li [routerLinkActive]="['nav-item-selected']" [class.nav-item-hover]="item._hover" (mouseenter)="toggleHover(item,child)" (mouseleave)="deleteAllHover()">
+              <a [routerLink]="child.link" [target]="child.target">{{ child.text }}</a>
+              <i class="favorite anticon anticon-star-o" *ngIf="child._hover && !child.isFavorite" (click)="addToFavorite(item, child)"></i>
+              <i class="favorite anticon anticon-star" *ngIf="child.isFavorite" (click)="removeFavorite(child)"></i>
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+    </ng-container>
+  </ul>
+  <!-- <ul class="nav" nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+    <li nz-submenu *ngFor="let item of menus" [(nzOpen)]="item._open" (nzOpenChange)="toggleOpen(item)" [routerLinkActive]="['nav-item-selected']" [class.nav-submenu-open]="item._open">
+      <span title><i class="anticon {{ item.icon }}"></i>
+        <span class="nav-text">{{ item.text }}</span>
+      </span>
+      <ul class="nav-sub" *ngIf="item.child">
+        <li nz-menu-item *ngFor="let child of item.child" [routerLinkActive]="['nav-item-selected']">
+          <a [routerLink]="child.link" [target]="child.target">{{ child.text }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul> -->
+</div>

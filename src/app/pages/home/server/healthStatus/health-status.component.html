@@ -1,0 +1,58 @@
+<div>
+  <div nz-row class="condition_collapse">
+    <nz-collapseset>
+      <nz-collapse [nzTitle]="'映射'" [nzActive]="true" [nzDisabled]="false">
+        <div nz-row>
+          <nz-table #nzTable 
+            [nzAjaxData]="_dataMapIp"
+            [nzLoading]="_loading" 
+            [nzBordered]="true" 
+            [nzIsPagination]="false"
+            [nzSize]="'small'">
+            <thead nz-thead>
+              <tr>
+                <th nz-th><span>序号</span></th>
+                <th nz-th><span>ip</span></th>
+                <th nz-th><span>健康状况</span></th>
+              </tr>
+            </thead>
+            <tbody nz-tbody>
+              <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td>{{data.num}}</td>
+                <td nz-td>{{data.ip}}</td>
+                <td nz-td>{{data.healthStatus}}</td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'端口映射 '" [nzActive]="true" [nzDisabled]="false">
+        <div nz-row>
+          <nz-table #nzTable 
+            [nzAjaxData]="_dataSet"
+            [nzLoading]="_loading" 
+            [nzBordered]="true" 
+            [nzIsPagination]="false"
+            [nzSize]="'small'">
+            <thead nz-thead>
+              <tr>
+                <th nz-th><span>序号</span></th>
+                <th nz-th><span>ip</span></th>
+                <th nz-th><span>健康状况</span></th>
+              </tr>
+            </thead>
+            <tbody nz-tbody>
+              <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td>{{data.num}}</td>
+                <td nz-td>{{data.ip}}</td>
+                <td nz-td>{{data.healthStatus}}</td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div>
+      </nz-collapse>
+    </nz-collapseset>
+  </div>
+
+
+  

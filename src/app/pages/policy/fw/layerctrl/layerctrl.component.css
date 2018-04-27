@@ -1,0 +1,9 @@
+/* 折叠面板 内容部分padding */
+:host ::ng-deep .ant-collapse-content > .ant-collapse-content-box {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* end */
+.ant-form-item-last {
+  margin-bottom: 0px;
+}

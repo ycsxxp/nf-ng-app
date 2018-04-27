@@ -1,0 +1,155 @@
+<div style="background: #ECECEC;padding:10px;">
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #title>
+          引擎(当前版本：V6.0.1.152.12)
+        </ng-template>
+        <ng-template #extra>
+        </ng-template>
+        <ng-template #body>
+          <nz-table #nzTable [nzDataSource]="data">
+            <thead nz-thead>
+              <tr>
+                <th nz-th><span>升级包版本号</span></th>
+                <th nz-th><span>操作</span></th>
+              </tr>
+            </thead>
+            <tbody nz-tbody>
+              <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td><a>{{data.name}}</a></td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #title>
+          病毒特征库(当前版本：V6.0.1.1    2016-05-31)
+        </ng-template>
+        <ng-template #extra>
+        </ng-template>
+        <ng-template #body>
+          <nz-table #nzTable [nzDataSource]="data">
+            <thead nz-thead>
+              <tr>
+                <th nz-th><span>升级包版本号</span></th>
+                <th nz-th><span>操作</span></th>
+              </tr>
+            </thead>
+            <tbody nz-tbody>
+              <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td><a>{{data.name}}</a></td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="8" style="height: 8px;"></div>
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #title>
+          入侵防护特征库(当前版本：V6.0.1.596    2016-08-26)
+        </ng-template>
+        <ng-template #extra>
+        </ng-template>
+        <ng-template #body>
+          <nz-table #nzTable [nzDataSource]="data">
+            <thead nz-thead>
+              <tr>
+                <th nz-th><span>升级包版本号</span></th>
+                <th nz-th><span>操作</span></th>
+              </tr>
+            </thead>
+            <tbody nz-tbody>
+              <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td><a>{{data.name}}</a></td>
+              </tr>
+            </tbody>
+          </nz-table> 
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #title>
+          恶意站点库(当前版本：V5.6.7.283    2014-05-19)
+        </ng-template>
+        <ng-template #extra>
+        </ng-template>
+        <ng-template #body>
+          <nz-table #nzTable [nzDataSource]="data">
+            <thead nz-thead>
+              <tr>
+                <th nz-th><span>升级包版本号</span></th>
+                <th nz-th><span>操作</span></th>
+              </tr>
+            </thead>
+            <tbody nz-tbody>
+              <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td><a>{{data.name}}</a></td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="8" style="height: 8px;"></div>
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #title>
+          应用特征库(当前版本：V6.0.0.65)
+        </ng-template>
+        <ng-template #extra>
+        </ng-template>
+        <ng-template #body>
+          <nz-table #nzTable [nzDataSource]="data">
+            <thead nz-thead>
+              <tr>
+                <th nz-th><span>升级包版本号</span></th>
+                <th nz-th><span>操作</span></th>
+              </tr>
+            </thead>
+            <tbody nz-tbody>
+              <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td><a>{{data.name}}</a></td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #title>
+          URL分类库(当前版本：V6.0.0.22)
+        </ng-template>
+        <ng-template #extra>
+        </ng-template>
+        <ng-template #body>
+          <nz-table #nzTable [nzDataSource]="data">
+            <thead nz-thead>
+              <tr>
+                <th nz-th><span>升级包版本号</span></th>
+                <th nz-th><span>操作</span></th>
+              </tr>
+            </thead>
+            <tbody nz-tbody>
+              <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td><a>{{data.name}}</a></td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+   
+</div>

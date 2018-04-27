@@ -1,0 +1,93 @@
+<div>
+  <nz-collapseset [nzBordered]="false">
+    <nz-collapse [nzTitle]="'联动配置'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <form nz-form>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>域名称</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-input name="domain_name" [(ngModel)]="domain_name" [nzType]="'text'" [nzPlaceHolder]="'请输入'" [nzSize]="'default'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>服务器IP</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-input name="server_host" [(ngModel)]="server_host" [nzType]="'text'" [nzPlaceHolder]="'请输入'" [nzSize]="'default'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>服务器端口</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-input name="server_port" [(ngModel)]="server_port" [nzType]="'text'" [nzPlaceHolder]="'请输入'" [nzSize]="'default'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>连接超时(秒)</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-input name="server_timeOut" [(ngModel)]="server_timeOut" [nzType]="'text'" [nzPlaceHolder]="'请输入'" [nzSize]="'default'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-control nz-col [nzSpan]="21" [nzOffset]="3">
+            <button nz-button [nzType]="'primary'" [nzSize]="'default'">添加</button>
+          </div>
+        </div>
+      </form>
+    </nz-collapse>
+    <nz-collapse [nzTitle]="'堡垒机列表'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-bottom: 10px;">
+        <div nz-col [nzSpan]="10">
+          <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+        </div>
+        <div nz-col [nzSpan]="14" style="text-align: right;">
+          <nz-input [nzType]="'search'" [nzPlaceHolder]="'请输入'" [(ngModel)]="_search" style="width: 200px;"></nz-input>
+        </div>
+      </div>
+      <div nz-row>
+        <nz-table #nzTable [nzDataSource]="_dataSet" [nzBordered]="true" [nzIsPagination]="false">
+        <thead nz-thead>
+          <tr>
+            <!-- <th nz-th [nzCheckbox]="true">
+              <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+              </label>
+            </th> -->
+            <th nz-th *ngFor="let item of tableHeader">
+              <span>{{ item.title }}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody nz-tbody>
+          <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+            <!-- <td nz-td [nzCheckbox]="true">
+              <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+              </label>
+            </td> -->
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+          </tr>
+        </tbody>
+        </nz-table>
+      </div>
+      <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-top: 5px;">
+        <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+      </div>
+    </nz-collapse>
+  </nz-collapseset>
+  
+</div>

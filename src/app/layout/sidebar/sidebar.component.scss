@@ -1,0 +1,95 @@
+:host ::ng-deep .aside-inner{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+  .nav {
+    display: block;
+    font-size: 14px;
+
+    li {
+      position: relative;
+      border-left: 3px solid transparent;
+      -webkit-transition: border-left-color .4s ease;
+      transition: border-left-color .4s ease;
+
+      a {
+        color: rgba(0,0,0,.65);
+        text-decoration: none;
+        padding: 8px 16px;
+        white-space: nowrap;
+        position: relative;
+        display: block;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        i {
+          min-width: 14px;
+          display: inline-block;
+          margin-right: 5px;
+          -webkit-transition: font-size .15s cubic-bezier(.215,.61,.355,1),margin .3s cubic-bezier(.645,.045,.355,1);
+          transition: font-size .15s cubic-bezier(.215,.61,.355,1),margin .3s cubic-bezier(.645,.045,.355,1);
+        }
+      }
+    }
+  }
+  .nav-sub {
+    display: none;
+    overflow: hidden;
+    li {
+      border-left: 0!important;
+    }
+  }
+  .nav-sub-title:after {
+    content: "\E61D";
+    font-family: anticon!important;
+    font-style: normal;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    text-rendering: auto;
+    position: absolute;
+    right: 16px;
+    top: 9.5px;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-transform: scale(.66666667) rotate(0deg);
+    transform: scale(.66666667) rotate(0deg);
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.645,.045,.355,1);
+    transition: -webkit-transform .3s cubic-bezier(.645,.045,.355,1);
+    transition: transform .3s cubic-bezier(.645,.045,.355,1);
+    transition: transform .3s cubic-bezier(.645,.045,.355,1),-webkit-transform .3s cubic-bezier(.645,.045,.355,1);
+    zoom: 1;
+  }
+  .nav>li.nav-submenu-open>.nav-sub-title:after {
+    -webkit-transform: rotate(180deg) scale(.75);
+    transform: rotate(180deg) scale(.75);
+  }
+  // 被打开的标签
+  .nav-submenu-open {
+    .nav-sub {
+      display: block;
+      -webkit-animation: fadeIn .5s;
+      animation: fadeIn .5s;
+      li>a {
+        padding-left: 38px;
+      }
+      .favorite {
+        display: inline;
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+    }
+  }
+  // 被选中的标签
+  .nav-item-selected {
+    background-color: #fcfcfc;
+  }
+}

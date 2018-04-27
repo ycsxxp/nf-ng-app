@@ -1,0 +1,235 @@
+<div>
+  <form nz-form>
+    <nz-collapseset [nzBordered]="false">
+      <nz-collapse [nzTitle]="' [1] BPDU 协议控制'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="enabled_bpdu" [(ngModel)]="enabled_bpdu">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>阻断</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_bpdu" name="action_bpdu" [(ngModel)]="action_bpdu">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>记录日志</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_bpdu" name="log_bpdu" [(ngModel)]="log_bpdu">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'[2] 8021Q 协议控制'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="enabled_8021q" [(ngModel)]="enabled_8021q">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>阻断</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_8021q" name="action_8021q" [(ngModel)]="action_8021q">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>记录日志</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_8021q" name="log_8021q" [(ngModel)]="log_8021q">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'[3] SLOW 协议控制'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="enabled_slow" [(ngModel)]="enabled_slow">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>阻断</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_slow" name="action_slow" [(ngModel)]="action_slow">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>记录日志</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_slow" name="log_slow" [(ngModel)]="log_slow">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'[4] MPLS 单播控制'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="enabled_mpls" [(ngModel)]="enabled_mpls">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>阻断</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_mpls" name="action_mpls" [(ngModel)]="action_mpls">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>记录日志</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_mpls" name="log_mpls" [(ngModel)]="log_mpls">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'[5] MPLS 多播控制'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="enabled_mpls_multi" [(ngModel)]="enabled_mpls_multi">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>阻断</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_mpls_multi" name="action_mpls_multi" [(ngModel)]="action_mpls_multi">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>记录日志</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_mpls_multi" name="log_mpls_multi" [(ngModel)]="log_mpls_multi">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'[6] PPPoE 发现控制'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="enabled_pppoe" [(ngModel)]="enabled_pppoe">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>阻断</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_pppoe" name="action_pppoe" [(ngModel)]="action_pppoe">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>记录日志</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_pppoe" name="log_pppoe" [(ngModel)]="log_pppoe">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'[7] PPPoE 会话控制'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="enabled_pppoe_session" [(ngModel)]="enabled_pppoe_session">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>阻断</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_pppoe_session" name="action_pppoe_session" [(ngModel)]="action_pppoe_session">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>记录日志</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_pppoe_session" name="log_pppoe_session" [(ngModel)]="log_pppoe_session">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'[8] QinQ 协议控制'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row class="ant-form-item-last">
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="enabled_qinq" [(ngModel)]="enabled_qinq">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>阻断</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_qinq" name="action_qinq" [(ngModel)]="action_qinq">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>记录日志</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-switch [nzDisabled]="!enabled_qinq" name="log_qinq" [(ngModel)]="log_qinq">
+              <span checked>是</span>
+              <span unchecked>否</span>
+            </nz-switch>
+          </div>
+        </div>
+      </nz-collapse>
+    </nz-collapseset>
+    <div nz-row style="margin-top: 20px;">
+      <div nz-col [nzSpan]="2" style="padding: 0 16px;">
+        <button nz-button [nzType]="'primary'" (click)="refresh()"><span>确定</span></button>
+      </div>
+    </div>
+  </form>
+</div>

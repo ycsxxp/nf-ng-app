@@ -1,0 +1,95 @@
+
+<nz-spin [nzSpinning]="_isSpinning" [nzTip]="'正在加载数据...'">
+  <div nz-row [nzType]="'flex'">
+    <div class="device-profile">
+      <table class="intf-table">
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="demo-device disconnected"></div>
+            </td>
+            <td>
+              <div class="demo-device connected"></div>
+            </td>
+            <td>
+              <div class="demo-device disconnected"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="demo-device disconnected"></div>
+            </td>
+            <td>
+              <div class="demo-device disconnected"></div>
+            </td>
+            <td>
+              <div class="demo-device disconnected"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-bottom: 10px;">
+    <div nz-col [nzSpan]="12" style="text-align: left;">
+      <button nz-button [nzType]="'primary'" (click)="edit()">
+        <span>新建</span>
+      </button>
+      <button nz-button [nzType]="'primary'" [disabled]="_disabledDeleteBtn" (click)="delete()">
+        <span>删除</span>
+      </button>
+      <nz-input [nzType]="'search'" [nzPlaceHolder]="'查找内容'" [(ngModel)]="_search" style="width: 200px;margin-right: 10px;"></nz-input>
+    </div>
+  </div>
+  <div nz-row>
+    <nz-table #nzTable [nzDataSource]="interfaceList" [nzBordered]="true" [nzIsPagination]="false" [nzSize]="'small'">
+      <thead class="list-table-thead" nz-thead>
+        <tr>
+          <th nz-th [nzCheckbox]="true">
+            <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+            </label>
+          </th>
+          <th nz-th *ngFor="let item of tableHeader">
+            <span>{{ item.title }}</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="list-table-tbody" nz-tbody>
+        <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+          <td nz-td [nzCheckbox]="true">
+            <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+            </label>
+          </td>
+          <td nz-td>{{ data.name }}</td>
+          <td nz-td>{{ data.name}}</td>
+          <td nz-td>{{ data.type }}</td>
+          <td nz-td>可管理属性</td>
+          <td nz-td>
+            <p *ngFor="let ip of data.ip4">{{ip}}</p>
+          </td>
+          <td nz-td>{{ data.vlan }}</td>
+          <td nz-td>VWire</td>
+          <td nz-td>DMZ</td>
+          <td nz-td>
+            <button nz-button [nzType]="'primary'" [nzSize]="'small'" title="编辑" (click)="edit(data)">
+              <i class="anticon anticon-edit"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-top: 5px;">
+    <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+  </div>
+</nz-spin>

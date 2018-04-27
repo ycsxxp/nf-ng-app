@@ -1,0 +1,65 @@
+.my-select {
+  height: 20px;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+// @-moz-keyframes selection-pane-slide-in{0%{width:0}100%{width:500px}}
+// @-webkit-keyframes selection-pane-slide-in{0%{width:0}100%{width:500px}}
+// @-o-keyframes selection-pane-slide-in{0%{width:0}100%{width:500px}}
+// @keyframes selection-pane-slide-in{0%{width:0}100%{width:500px}}
+// @-moz-keyframes selection-pane-slide-out{0%{width:500px;width:500px}100%{width:0}}
+// @-webkit-keyframes selection-pane-slide-out{0%{width:500px;width:500px}100%{width:0}}
+// @-o-keyframes selection-pane-slide-out{0%{width:500px;width:500px}100%{width:0}}
+// @keyframes selection-pane-slide-out{0%{width:500px;width:500px}100%{width:0}}
+
+.ant-modal-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  /* left: 0; */
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  // animation: selection-pane-slide-in .5s;
+}
+.ant-modal {
+  width: 300px;
+  // transform-origin: 372px 105px 0px;
+  position: relative;
+  // width: auto;
+  /* margin-right: 0; */
+  /* top: 100px; */
+  /* padding-bottom: 24px; */
+  /* float: right; */
+  height: 100%;
+}
+.ant-modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 0;
+  border-radius: 4px;
+  background-clip: padding-box;
+  /* box-shadow: 0 10px 18px rgba(0,0,0,.2); */
+  height: 100%;
+}
+
+.ant-select-dropdown-menu-item-selected:hover:after {
+  color: #108ee9;
+  display: inline-block;
+}
+
+.ant-select-dropdown-menu-item-selected i {
+  color: #108ee9;
+  // transform: translateY(-50%);
+  font-weight: bold;
+  text-shadow: 0 0.1px 0, 0.1px 0 0, 0 -0.1px 0, -0.1px 0;
+}
+
+.submit-btn-row {
+  background-color: #f6f6f6;
+  padding: 5px;
+}

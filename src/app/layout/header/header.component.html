@@ -1,0 +1,47 @@
+<div class="logo">
+  <img class="expanded" src="./assets/imgs/logo_nf.png" style="max-height:40px;" alt="NSFOCUS">
+  <img class="collapsed" src="./assets/imgs/logo_nf.png" alt="NSFOCUS">
+</div>
+<div class="top-nav-wrap">
+  <ul class="top-nav">
+    <li>
+      <div class="item" (click)="toggleCollapsedSidebar()">
+        <i class="anticon anticon-menu-{{layoutService.layout.collapsed ? 'unfold' : 'fold'}}"></i>
+      </div>
+    </li>
+  </ul>
+  <ul class="top-nav">
+    <li>
+      <nz-dropdown nzTrigger="click" nzPlacement="bottomRight">
+        <div class="item" nz-dropdown>
+          <i class="anticon anticon-setting"></i>
+        </div>
+        <div nz-menu style="width:200px">
+          <div nz-menu-item class="theme-switch">
+            <header-theme></header-theme>
+          </div>
+          <div nz-menu-item>
+            <!-- <header-fullscreen></header-fullscreen> -->
+          </div>
+          <div nz-menu-item>
+            <!-- <header-storage></header-storage> -->
+          </div>
+          <div nz-menu-item>
+            <!-- <header-langs></header-langs> -->
+          </div>
+        </div>
+      </nz-dropdown>
+    </li>
+  </ul>
+</div>
+
+<!-- <div class="option">
+<nz-dropdown nzTrigger="click">
+  <i class="anticon anticon-setting" nz-dropdown></i>
+  <ul nz-menu>
+    <li nz-menu-item>1st menu item</li>
+    <li nz-menu-item>2nd menu item</li>
+    <li nz-menu-item>3rd menu item</li>
+  </ul>
+</nz-dropdown>
+</div> -->

@@ -1,0 +1,40 @@
+<div class="widget-div">
+  <div class="widget-header">
+    <div class="widget-title">
+      版本信息
+    </div>
+    <div class="widget-controls">
+      <div class="area-control">
+        <i class="anticon anticon-ellipsis" (click)="changeArea()"></i>
+        <div *ngIf="click" class="widget-area-change">
+          <div class="area-cell" (click)="changeToArea(1)"></div>
+          <div class="area-cell" (click)="changeToArea(2)"></div>
+          <div class="area-cell" (click)="changeToArea(3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="widget-content-container">
+    <table class="table key-value">
+      <tbody>
+        <tr class="tr-row">
+          <td class="td-col-1">引擎版本</td>
+          <td class="td-col-2">6.0.3.35</td>
+        </tr>
+        <tr>
+          <td>内存</td>
+          <td>60%</td>
+        </tr>
+        <tr>
+          <td>应用层防护</td>
+          <td>开启</td>
+        </tr>
+        <tr>
+          <td>序列号</td>
+          <td>14CE-B2DA-1A32-2242</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>

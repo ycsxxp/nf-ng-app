@@ -1,0 +1,63 @@
+<div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-bottom: 10px;">
+    <div nz-col [nzSpan]="10">
+      <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+    </div>
+    <div nz-col [nzSpan]="14" style="text-align: right;">
+      <nz-input [nzType]="'search'" [nzPlaceHolder]="'请输入'" [(ngModel)]="_search" style="width: 200px;margin-right: 10px;"></nz-input>
+      <nz-dropdown>
+        <button nz-button nz-dropdown [nzType]="'primary'"><span>操作</span> <i class="anticon anticon-down"></i></button>
+        <ul nz-menu>
+          <li nz-menu-item>
+            <a target="_blank" rel="noopener noreferrer" href="#">启用</a>
+          </li>
+          <li nz-menu-item>
+            <a target="_blank" rel="noopener noreferrer" href="#">禁用</a>
+          </li>
+          <li nz-menu-item>
+            <a target="_blank" rel="noopener noreferrer" href="#">删除</a>
+          </li>
+          <li nz-menu-item>
+            <a target="_blank" rel="noopener noreferrer" href="#">清空</a>
+          </li>
+          <li nz-menu-item>
+            <a target="_blank" rel="noopener noreferrer" href="#">命中计数清零</a>
+          </li>
+        </ul>
+      </nz-dropdown>
+    </div>
+  </div>
+  <div nz-row>
+    <nz-table #nzTable [nzDataSource]="_dataSet" [nzBordered]="true" [nzIsPagination]="false">
+    <thead nz-thead>
+      <tr>
+        <th nz-th [nzCheckbox]="true">
+          <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+          </label>
+        </th>
+        <th nz-th *ngFor="let item of tableHeader">
+          <span>{{ item.title }}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+        <td nz-td [nzCheckbox]="true">
+          <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+          </label>
+        </td>
+        <td nz-td></td>
+        <td nz-td></td>
+        <td nz-td></td>
+        <td nz-td></td>
+        <td nz-td></td>
+        <td nz-td></td>
+        <td nz-td></td>
+      </tr>
+    </tbody>
+    </nz-table>
+  </div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-top: 5px;">
+    <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+  </div>
+</div>

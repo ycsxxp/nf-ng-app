@@ -1,0 +1,8 @@
+.condition_collapse {
+  margin-bottom: 20px;
+}
+
+:host ::ng-deep .ant-tabs-nav .ant-tabs-tab {
+  padding-top: 0px;
+}
+

@@ -1,0 +1,88 @@
+<div style="background: #ECECEC;padding:10px;line-height:22px;">
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzPush]="1"  [nzSpan]="21">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSpan]="3">
+          <label>升级地址：</label>
+        </div>
+        <div nz-form-control nz-col [nzSpan]="8">
+          <nz-input  name="src_ip" [nzSize]="'small'" [(ngModel)]="ip" [nzPlaceHolder]="''" ></nz-input>
+        </div>
+        <div nz-form-control nz-col [nzPush]="1" [nzSpan]="8">
+          升级地址栏无需填写http://
+        </div>
+      </div>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="8" style="height: 8px;"></div>
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzPush]="1" [nzSpan]="21">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSpan]="3">
+          <label>升级包含引擎：</label>
+        </div>
+        <div nz-form-control nz-col [nzSpan]="4">
+          <nz-radio-group [nzSize]="'large'" [(ngModel)]="radioValue">
+            <label nz-radio  [nzValue]="'true'">
+              <span>是</span>
+            </label>
+            <label nz-radio [nzValue]="'false'">
+              <span>否</span>
+            </label>
+          </nz-radio-group>
+        </div>
+        <div nz-form-label nz-col [nzSpan]="3">
+          <button nz-button [nzType]="'primary'" [nzSize]="'small'" (click)="query()">立即升级</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="8" style="height: 8px;"></div>
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzPush]="1" [nzSpan]="21">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSpan]="3">
+          <label>定时升级：</label>
+        </div>
+        <div nz-form-control nz-col [nzSpan]="21">
+          <nz-radio-group [(ngModel)]="autotype">
+            <label nz-radio (click)="radioClick()" [nzValue]="'A'">
+              <span>自动升级(推荐)</span>
+            </label>
+            <nz-select
+              style="width: 55px;"
+              nzAllowClear
+              [(ngModel)]="selectedOption"  [nzDisabled]="selectedOptionDisabled">
+              <nz-option
+                *ngFor="let option of timeOption"
+                [nzLabel]="option.label"
+                [nzValue]="option.value"
+                [nzDisabled]="option.disabled">
+              </nz-option>
+            </nz-select>
+            <nz-timepicker [(ngModel)]="_date" [nzSize]="" [nzDisabled]="selectedOptionDisabled"></nz-timepicker>
+            <label nz-radio (click)="radioClick()" [nzValue]="'B'">
+              <span>有升级包时通知我，但是由我来决定什么时候升级</span>
+            </label>
+            <label nz-radio (click)="radioClick()" [nzValue]="'C'">
+              <span>关闭定时升级</span>
+            </label>
+          </nz-radio-group>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="8" style="height: 8px;"></div>
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzPush]="1" [nzSpan]="21">
+      <div nz-form-item nz-row>
+        <div nz-form-label nz-col [nzSpan]="3">
+          <label></label>
+        </div>
+        <div nz-form-label nz-col [nzSpan]="3">
+          <button nz-button [nzType]="'primary'" [nzSize]="'small'" (click)="query()">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

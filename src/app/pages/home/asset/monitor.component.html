@@ -1,0 +1,133 @@
+<div>
+  <div nz-row class="condition_collapse">
+    <nz-collapseset>
+      <nz-collapse [nzTitle]="'查询'" [nzActive]="true" [nzDisabled]="false">
+        <form nz-form [nzLayout]='inline'>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label>IP地址</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="5">
+              <nz-input  name="src_ip" [nzSize]="'small'" [(ngModel)]="ip" [nzPlaceHolder]="'请输入'" ></nz-input>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label>操作系统</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="21">
+              <nz-select  name="input_risk" [nzSize]="'small'" [(ngModel)]="selectedInput_os" [nzMode]="'multiple'" [nzPlaceHolder]="'请选择操作系统'">
+                <nz-option
+                  *ngFor="let option of input_os"
+                  [nzLabel]="option.label"
+                  [nzValue]="option">
+                </nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label>浏览器</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="21">
+              <nz-select  name="input_risk" [nzSize]="'small'" [(ngModel)]="selectedInput_br" [nzMode]="'multiple'" [nzPlaceHolder]="'请选择浏览器'">
+                <nz-option
+                  *ngFor="let option of input_br"
+                  [nzLabel]="option.label"
+                  [nzValue]="option">
+                </nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="3">
+              <label>杀毒软件</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="21">
+              <nz-select  name="input_risk" [nzSize]="'small'" [(ngModel)]="selectedInput_av" [nzMode]="'multiple'" [nzPlaceHolder]="'请选择杀毒软件'">
+                <nz-option
+                  *ngFor="let option of input_av"
+                  [nzLabel]="option.label"
+                  [nzValue]="option">
+                </nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-control nz-col [nzSpan]="21" [nzOffset]="3">
+              <button nz-button [nzType]="'primary'" (click)="query()">查询</button>
+            </div>
+          </div>
+        </form>
+      </nz-collapse>
+    </nz-collapseset>
+  </div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-bottom: 5px;">
+    <div nz-col [nzSpan]="4" style="text-align: right;padding-right: 10px;">
+      <nz-switch (click)="switchValueClick()" [(ngModel)]="switchValue">
+        <span checked>自动刷新</span>
+        <span unchecked>自动刷新</span>
+      </nz-switch>
+      <nz-select style="width: 60px;" [(ngModel)]="selectedtimeOption" nzAllowClear>
+        <nz-option
+          *ngFor="let option of timeOption"
+          [nzLabel]="option.label"
+          [nzValue]="option">
+        </nz-option>
+      </nz-select>
+    </div>
+    <div nz-col [nzSpan]="4" style="text-align: right;">
+      <button nz-button [nzType]="'primary'" (click)="refresh()"><span>手动刷新</span></button>
+      <button nz-button [nzType]="'primary'" (click)="clearData()"><span>清空数据</span></button>
+    </div>
+  </div>
+    <div nz-row>
+    <nz-table #nzTable 
+      [nzAjaxData]="_dataSet"
+      [nzLoading]="_loading" [nzBordered]="true" [nzIsPagination]="false"
+      [nzSize]="'small'">
+    <thead nz-thead>
+      <tr>
+        <th nz-th><span>风险等级</span></th>
+        <th nz-th><span>IP</span></th>
+        <th nz-th><span>操作系统</span></th>
+        <th nz-th><span>浏览器</span></th>
+        <th nz-th><span>应用</span></th>
+        <th nz-th><span>流量(上行|下行)</span></th>
+        <th nz-th><span>杀毒软件</span></th>
+        <th nz-th><span>服务</span></th>
+        <th nz-th><span>漏洞数</span></th>
+        <th nz-th><span>已防护漏洞数</span></th>
+        <th nz-th><span>活跃时间</span></th>
+        <th nz-th><span>来源</span></th>
+        <th nz-th><span>操作</span></th>
+        
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+        <td nz-td>{{data.key}}</td>
+        <td nz-td><a>{{data.ip}}</a></td>
+        <td nz-td>{{data.type}}</td>
+        <td nz-td>{{data.os}}</td>
+        <td nz-td>{{data.app}}</td>
+        <td nz-td>{{data.topdown}}</td>
+        <td nz-td>{{data.time}}</td>
+      </tr>
+    </tbody>
+    </nz-table>
+  </div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-top: 5px;">
+        <nz-pagination 
+    (nzPageSizeChange) ="nzPageSizeChange($event)"
+    (nzPageIndexChange) ="nzPageIndexChange($event)"
+    (nzPageIndexClickChange) ="nzPageIndexClickChange($event)"
+    [(nzPageIndex)]="_current"
+    [(nzPageSize)]='_pageSize'
+    [nzTotal]="_total" 
+    [nzSize]="'small'" 
+    nzShowSizeChanger 
+    nzShowQuickJumper
+    ></nz-pagination>
+ <div>
+  

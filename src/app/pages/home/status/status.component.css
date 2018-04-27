@@ -1,0 +1,11 @@
+.text_td{
+	min-width: 40px;
+	height: 20px;
+	line-height: 20px;
+	text-align: left;
+}
+.input_td{
+	min-width: 25%;
+	height: 20px;
+	line-height: 20px;
+}

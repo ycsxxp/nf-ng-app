@@ -1,0 +1,6 @@
+:host ::ng-deep .ant-collapse-header {
+  background: #f7f7f7;
+}
+.ant-form-item {
+  margin-bottom: 12px;
+}

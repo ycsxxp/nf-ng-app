@@ -1,0 +1,162 @@
+<div>
+  <nz-collapseset [nzBordered]="false">
+    <nz-collapse [nzTitle]="'联动配置'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <form nz-form>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>联动状态</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-badge [nzStatus]="'error'" [nzText]="'未连接'"></nz-badge>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>终端安全联动</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-radio-group name="enabled" [(ngModel)]="enabled">
+              <label nz-radio-button [nzValue]="true">
+                <span>启用</span>
+              </label>
+              <label nz-radio-button [nzValue]="false">
+                <span>禁用</span>
+              </label>
+            </nz-radio-group>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>联动IP</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-input name="ip" [(ngModel)]="ip" [nzType]="'text'" [nzPlaceHolder]="'请输入'" [nzSize]="'default'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>联动端口</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-input name="port" [(ngModel)]="port" [nzType]="'text'" [nzPlaceHolder]="'请输入'" [nzSize]="'default'">
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>安全区</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-select name="zone" [nzSize]="'default'" [(ngModel)]="zone" [nzMode]="'multiple'" [nzPlaceHolder]="'请选择'">
+              <nz-option
+                *ngFor="let option of zones"
+                [nzLabel]="option.label"
+                [nzValue]="option.value">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>包含范围</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-select name="object" [nzSize]="'default'" [(ngModel)]="object" [nzMode]="'multiple'" [nzPlaceHolder]="'请选择'">
+              <nz-option
+                *ngFor="let option of objects"
+                [nzLabel]="option.label"
+                [nzValue]="option.value">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>排除范围</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-select name="exception" [nzSize]="'default'" [(ngModel)]="exception" [nzMode]="'multiple'" [nzPlaceHolder]="'请选择'">
+              <nz-option
+                *ngFor="let option of exceptions"
+                [nzLabel]="option.label"
+                [nzValue]="option.value">
+              </nz-option>
+            </nz-select>
+          </div>
+        </div>
+        <div *ngIf="enabled" nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>病毒库版本检查</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-switch name="av_version" [(ngModel)]="av_version">
+              <span checked>开</span>
+              <span unchecked>关</span>
+            </nz-switch>
+          </div>
+        </div>
+        <div *ngIf="enabled" nz-form-item nz-row>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label>高危漏洞检查</label>
+          </div>
+          <div nz-col [nzSpan]="6" nz-form-control>
+            <nz-switch name="vulnerabilities" [(ngModel)]="vulnerabilities">
+              <span checked>开</span>
+              <span unchecked>关</span>
+            </nz-switch>
+          </div>
+        </div>
+        <div nz-form-item nz-row>
+          <div nz-form-control nz-col [nzSpan]="21" [nzOffset]="3">
+            <button nz-button [nzType]="'primary'" [nzSize]="'default'">确定</button>
+          </div>
+        </div>
+      </form>
+    </nz-collapse>
+    <nz-collapse [nzTitle]="'客户端列表'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-bottom: 10px;">
+        <div nz-col [nzSpan]="10">
+          <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+        </div>
+        <div nz-col [nzSpan]="14" style="text-align: right;">
+          <nz-input [nzType]="'search'" [nzPlaceHolder]="'请输入'" [(ngModel)]="_search" style="width: 200px;"></nz-input>
+        </div>
+      </div>
+      <div nz-row>
+        <nz-table #nzTable [nzDataSource]="_dataSet" [nzBordered]="true" [nzIsPagination]="false">
+        <thead nz-thead>
+          <tr>
+            <!-- <th nz-th [nzCheckbox]="true">
+              <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+              </label>
+            </th> -->
+            <th nz-th *ngFor="let item of tableHeader">
+              <span>{{ item.title }}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody nz-tbody>
+          <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+            <!-- <td nz-td [nzCheckbox]="true">
+              <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+              </label>
+            </td> -->
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+            <td nz-td></td>
+          </tr>
+        </tbody>
+        </nz-table>
+      </div>
+      <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-top: 5px;">
+        <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+      </div>
+    </nz-collapse>
+  </nz-collapseset>
+  
+</div>

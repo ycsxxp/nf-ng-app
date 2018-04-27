@@ -1,0 +1,124 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  /* 滚动条样式 */
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(110, 110, 110);
+    outline: rgb(51, 51, 51) solid 1px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px inset;
+  }
+  /* end */
+  // 顶部导航
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 16px;
+    width: 100%;
+    height: 40px;
+    background-color: #108ee9;
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.2);
+    box-shadow: 0 1px 10px rgba(0,0,0,.2);
+    z-index: 19;
+  }
+
+  // 左边导航
+  .aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin-top: 40px;
+    width: 200px;
+    background-color: #fff;
+    border-right: 1px solid #e9e9e9;
+    -webkit-transition: width .2s cubic-bezier(.25,0,.15,1),translate .2s cubic-bezier(.25,0,.15,1);
+    transition: width .2s cubic-bezier(.25,0,.15,1),translate .2s cubic-bezier(.25,0,.15,1);
+    z-index: 14;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      // border-right: 1px solid #efe3e5;
+    }
+  }
+  // 页面容器
+  .content {
+    margin: {
+      top: 52px;
+      left: 212px;
+      right: 12px;
+    }
+    position: relative;
+  }
+}
+
+// 左侧菜单收起时
+.aside-collapsed .wrapper {
+  // 顶部导航
+  .header {
+    .logo {
+      width: 64px;
+      img.expanded {
+        display: none;
+      }
+      img.collapsed {
+        display: inline;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  // 左边导航
+  .aside {
+    width: 64px;
+    ul {
+      li {
+        border-left: none;
+      }
+      .anticon {
+        width: 100%;
+        margin-right: 0px;
+        font-size: 24px;
+      }
+      span { display: none; }
+      .nav-sub {
+        display: none;
+      }
+      .nav-sub-title {
+        padding: 24px 0;
+        &:after {
+          content: none;
+        }
+      }
+    }
+    // ul.nav-sub {
+    //   display: none;
+    // }
+  }
+
+  // 页面容器
+  .content {
+    margin-left: 78px;
+  }
+}

@@ -1,0 +1,84 @@
+<div>
+  <nz-collapseset [nzBordered]="false">
+    <nz-collapse [nzTitle]="'与云端连接状态'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <div nz-row>
+        <div nz-col [nzSpan]="3" [nzOffset]="1">
+          <button nz-button [nzType]="'primary'" [nzSize]="'default'">僵尸网络检测</button>
+        </div>
+        <div nz-col [nzSpan]="3" [nzOffset]="1">
+          <button nz-button [nzType]="'primary'" [nzSize]="'default'">Web信誉检测</button>
+        </div>
+      </div>
+    </nz-collapse>
+    <nz-collapse [nzTitle]="'信誉库本地条目数'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <div nz-row>
+        <div nz-col [nzSpan]="3" [nzOffset]="1">
+          <button nz-button [nzType]="'primary'" [nzSize]="'default'">僵尸网络</button>
+        </div>
+        <div nz-col [nzSpan]="3" [nzOffset]="1">
+          <button nz-button [nzType]="'primary'" [nzSize]="'default'">Web信誉</button>
+        </div>
+      </div>
+    </nz-collapse>
+    <nz-collapse [nzTitle]="'僵尸网络防护'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <div nz-row [nzType]="'flex'" [nzAlign]="'middle'">
+        <div nz-col [nzSpan]="2" [nzOffset]="1">
+          <nz-switch name="enabled" [(ngModel)]="enabled">
+            <span checked>启用</span>
+            <span unchecked>停用</span>
+          </nz-switch>
+        </div>
+        <div *ngIf="enabled" nz-col [nzSpan]="2">
+          <nz-switch>
+            <span checked>阻断</span>
+            <span unchecked>不阻断</span>
+          </nz-switch>
+        </div>
+        <div nz-col [nzSpan]="3" [nzOffset]="1">
+          <button nz-button [nzType]="'primary'" [nzSize]="'default'">确定</button>
+        </div>
+      </div>
+    </nz-collapse>
+    <nz-collapse [nzTitle]="'Web信誉'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+      <div nz-row class="row-item" [nzType]="'flex'" [nzAlign]="'middle'">
+        <div nz-col [nzSpan]="2" [nzOffset]="1">
+          <nz-switch name="enable_web" [(ngModel)]="enable_web" (ngModelChange)="enable_web_onChange($event)">
+            <span checked>启用</span>
+            <span unchecked>停用</span>
+          </nz-switch>
+        </div>
+      </div>
+      <div nz-row style="text-align: center;margin-bottom: 20px;">
+        <div nz-col [nzSpan]="15" [nzOffset]="1">
+          <h3>信誉值</h3>
+        </div>
+      </div>
+      <div nz-row style="margin-bottom: 20px;">
+        <div nz-col [nzSpan]="15" [nzOffset]="1">
+          <nz-slider #nzSlider nzRange name="rangeValue" [nzDisabled]="!enable_web" [(ngModel)]="rangeValue" [nzMax]="5" [nzStep]="1" [nzMarks]="marks" (ngModelChange)="onChange($event)"></nz-slider>
+        </div>
+      </div>
+      <div nz-row style="margin-bottom: 20px;">
+        <div nz-col [nzSpan]="5" [nzOffset]="1" style="text-align: center;">
+          <h3>允许</h3>
+          <div>轻度威胁，允许访问</div>
+        </div>
+        <div nz-col [nzSpan]="5" style="text-align: center;">
+          <h3>告警</h3>
+          <div>中度威胁，站点存在安全隐患</div>
+          <div>用户选择是否继续访问</div>
+        </div>
+        <div nz-col [nzSpan]="5" style="text-align: center;;">
+          <h3>阻断</h3>
+          <div>高度威胁，站点极度不安全</div>
+          <div>访问将被直接阻断</div>
+        </div>
+      </div>
+      <div nz-row>
+        <div nz-col [nzSpan]="2" [nzOffset]="1">
+          <button nz-button [nzType]="'primary'" [nzSize]="'default'">确定</button>
+        </div>
+      </div>
+    </nz-collapse>
+  </nz-collapseset>
+</div>

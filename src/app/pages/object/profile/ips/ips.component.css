@@ -1,0 +1,6 @@
+:host ::ng-deep .ant-collapse-header {
+  /* background: #f7f7f7; */
+}
+.ant-table-selection-column {
+  padding: 10px 8px;
+}

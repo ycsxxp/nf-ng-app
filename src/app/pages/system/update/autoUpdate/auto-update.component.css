@@ -1,0 +1,5 @@
+.condition_collapse {
+  margin-bottom: 20px;
+}
+.sub_title {margin-top:3px;+margin-top:12px;margin-bottom:2ex;padding-bottom:3px;border-bottom:1px solid #dadada;font-weight:bold;text-align:left;}
+.sub_title span {position:absolute;margin:-5px 0 0;+margin:-3px 0 0;padding-right:4px;line-height:1.231;background:#FFF;}

@@ -1,0 +1,55 @@
+<div>
+  <div nz-row class="condition_collapse">
+    <nz-collapseset>
+      <nz-collapse [nzTitle]="panel.name" [nzActive]="panel.active" [nzDisabled]="panel.disabled">
+        <form nz-form [nzLayout]='inline'>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="1">
+              <label>类型</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="14">
+              <nz-select style="width: 100px;" name="range" [(ngModel)]="range" nzAllowClear>
+                <nz-option
+                  *ngFor="let option of ranges"
+                  [nzLabel]="option.label"
+                  [nzValue]="option">
+                </nz-option>
+              </nz-select>
+              <nz-datepicker name="time" [(ngModel)]="time" [nzSize]="'default'" [nzPlaceHolder]="'Select date'"></nz-datepicker>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="1">
+              <label>接口</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="14">
+              <nz-input style="width: 120px;" name="card" [nzSize]="'default'" [(ngModel)]="card" [nzPlaceHolder]="'请输入'" ></nz-input>
+              <nz-tooltip [nzTitle]="'按接口进行过滤，填写接口名称，例：G1/1'" [nzPlacement]="'right'" [nzTrigger]="'hover'">
+                <button nz-button nz-tooltip [nzType]="'primary'" [nzSize]="'small'" [nzShape]="'circle'">
+                  <i class="anticon anticon-question"></i>
+                </button>
+              </nz-tooltip>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-control nz-col [nzSpan]="23" [nzOffset]="1">
+              <button nz-button [nzType]="'primary'" [nzSize]="'large'">生成</button>
+            </div>
+          </div>
+        </form>
+      </nz-collapse>
+    </nz-collapseset>
+  </div>
+  <!-- <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-bottom: 5px;">
+    <div nz-col [nzSpan]="8" style="text-align: right;padding-right: 10px;">
+      <nz-button-group>
+        <button nz-button [nzType]="'primary'">
+          <i class="anticon anticon-download"></i>
+        </button>
+        <button nz-button [nzType]="'primary'">
+          <i class="anticon anticon-printer"></i>
+        </button>
+      </nz-button-group>
+    </div>
+  </div> -->
+</div>

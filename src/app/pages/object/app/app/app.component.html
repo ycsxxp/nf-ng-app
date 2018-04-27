@@ -1,0 +1,114 @@
+<div>
+  <div nz-row class="condition_collapse">
+    <nz-collapseset>
+      <nz-collapse [nzTitle]="panel.name" [nzActive]="panel.active" [nzDisabled]="panel.disabled">
+        <form nz-form [nzLayout]='inline'>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="2">
+              <label>文件名</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="6">
+              <nz-input name="info1" [nzSize]="'default'" [(ngModel)]="info1" [nzPlaceHolder]="'请输入'" ></nz-input>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="2">
+              <label>类别</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="6">
+              <nz-cascader name="category"
+                [nzPlaceHolder]="'请选择'"
+                [nzOptions]="categories"
+                [(ngModel)]="category">
+              </nz-cascader>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="2">
+              <label>实现技术</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="12">
+              <nz-select name="technology" [nzSize]="'default'" [(ngModel)]="technology" [nzMode]="'multiple'" [nzPlaceHolder]="'请选择风险等级'">
+                <nz-option
+                  *ngFor="let option of technologys"
+                  [nzLabel]="option.label"
+                  [nzValue]="option">
+                </nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="2">
+              <label>风险等级</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="22">
+              <nz-checkbox-group name="risk" [(ngModel)]="risk"></nz-checkbox-group>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-label nz-col [nzSpan]="2">
+              <label>标签</label>
+            </div>
+            <div nz-form-control nz-col [nzSpan]="12">
+              <nz-select name="tag" [nzSize]="'default'" [(ngModel)]="tag" [nzMode]="'multiple'" [nzPlaceHolder]="'请选择'">
+                <nz-option
+                  *ngFor="let option of tags"
+                  [nzLabel]="option.label"
+                  [nzValue]="option">
+                </nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div nz-form-item nz-row>
+            <div nz-form-control nz-col [nzSpan]="22" [nzOffset]="2">
+              <button nz-button [nzType]="'primary'" [nzSize]="'large'">查询</button>
+            </div>
+          </div>
+        </form>
+      </nz-collapse>
+    </nz-collapseset>
+  </div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-bottom: 10px;">
+    <div nz-col [nzSpan]="10">
+      <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+    </div>
+    <div nz-col [nzSpan]="14" style="text-align: right;">
+      <label>平台数量</label><label class="app_count">1527</label><label>个</label>&nbsp;
+      <label>应用数量</label><label class="app_count">2252</label><label>个</label>
+    </div>
+  </div>
+  <div nz-row>
+    <nz-table #nzTable [nzDataSource]="_dataSet" [nzBordered]="true" [nzIsPagination]="false">
+    <thead nz-thead>
+      <tr>
+        <th nz-th style="width: 10px;"></th>
+        <th nz-th *ngFor="let item of tableHeader">
+          <span>{{ item.title }}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <ng-template ngFor let-data [ngForOf]="nzTable.data">
+        <ng-template ngFor let-item [ngForOf]="expandDataCache[data.key]">
+          <tr nz-tbody-tr *ngIf="(item.parent&&item.parent.expand)||!(item.parent)">
+            <td nz-td style="text-align: center;">
+              <nz-row-expand-icon [(nzExpand)]="item.expand" (nzExpandChange)="collapse(expandDataCache[data.key],item,$event)" [nzShowExpand]="!item.children"></nz-row-expand-icon>
+            </td>
+            <td nz-td>
+              <nz-row-indent [nzIndentSize]="item.level"></nz-row-indent>
+              {{item.name}}
+            </td>
+            <td nz-td>{{item.risk}}</td>
+            <td nz-td>{{item.cat}}</td>
+            <td nz-td>{{item.subcat}}</td>
+            <td nz-td>{{item.technology}}</td>
+          </tr>
+        </ng-template>
+      </ng-template>
+    </tbody>
+    </nz-table>
+  </div>
+  <div nz-row [nzType]="'flex'" [nzAlign]="'middle'" style="margin-top: 5px;">
+    <nz-pagination [(nzPageIndex)]="_current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+  </div>
+</div>

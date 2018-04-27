@@ -1,0 +1,28 @@
+<div style="background: #ECECEC;padding:10px;">
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #title>
+          上行
+        </ng-template>
+        <ng-template #extra>
+        </ng-template>
+        <ng-template #body>
+            <app-top-traffic></app-top-traffic>
+        </ng-template>
+      </nz-card>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <nz-card>
+        <ng-template #title>
+          下行
+        </ng-template>
+        <ng-template #extra>
+        </ng-template>
+        <ng-template #body>
+          <app-down-traffic></app-down-traffic>
+        </ng-template>
+      </nz-card>
+    </div>
+  </div>
+</div>

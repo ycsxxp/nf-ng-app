@@ -1,0 +1,18 @@
+<nz-spin [nzSpinning]="_isSpinning" [nzTip]="'正在加载数据...'">
+  <div id="main" class="main" [ngStyle]="{'height': dashboardHeight+'px'}">
+    <ul>
+      <li class="widget-highlight" id="widgetHighLight" #widgetHighLight><div></div></li>
+      <li class="widget" *ngFor="let item of widgetResizeArr" id="{{item.widget}}" [ngStyle]="{ 'width': item.width+'px', 'height': item.height+'px', 'top': item.top+'px', 'left': item.left+'px' }">
+        <!-- <div class="widget-content">
+          {{ item.text }}
+        </div> -->
+
+        <app-system-widget *ngIf="item.widget == 'app-system-widget'" (onChangeArea)="onChangeArea($event)"></app-system-widget>
+        <app-version-widget *ngIf="item.widget == 'app-version-widget'" (onChangeArea)="onChangeArea($event)"></app-version-widget>
+        <app-interface-widget *ngIf="item.widget == 'app-interface-widget'" (onChangeArea)="onChangeArea($event)"></app-interface-widget>
+        <app-table-widget *ngIf="item.widget == 'app-table-widget'" (onChangeArea)="onChangeArea($event)"></app-table-widget>
+        <app-ul-widget *ngIf="item.widget == 'app-ul-widget'" (onChangeArea)="onChangeArea($event)"></app-ul-widget>
+      </li>
+    </ul>
+  </div>
+</nz-spin>

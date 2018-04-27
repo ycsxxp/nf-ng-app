@@ -1,0 +1,67 @@
+<div>
+  <form nz-form>
+    <nz-collapseset [nzBordered]="false">
+      <nz-collapse [nzTitle]="'TCP Port Scan'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="tcpportscan_check" [(ngModel)]="tcpportscan_check">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测阈值(包数)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!tcpportscan_check" name="tcpportscan_limit_count" [(ngModel)]="tcpportscan_limit_count" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测周期(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!tcpportscan_check" name="tcpportscan_limit_time" [(ngModel)]="tcpportscan_limit_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>复位时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!tcpportscan_check" name="tcpportscan_prune_quanta" [(ngModel)]="tcpportscan_prune_quanta" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+      </nz-collapse>
+      <nz-collapse [nzTitle]="'UDP Port Scan'" [nzActive]="true" [ngStyle]="{'border-radius': '4px','border': '0px'}">
+        <div nz-form-item nz-row>
+          <div nz-col [nzSpan]="2">
+            <nz-switch name="udpportscan_check" [(ngModel)]="udpportscan_check">
+              <span checked>启用</span>
+              <span unchecked>停用</span>
+            </nz-switch>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测阈值(包数)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!udpportscan_check" name="udpportscan_limit_count" [(ngModel)]="udpportscan_limit_count" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>检测周期(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!udpportscan_check" name="udpportscan_limit_time" [(ngModel)]="udpportscan_limit_time" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+          <div nz-form-label nz-col [nzSpan]="3">
+            <label nz-form-item-required>复位时间(秒)</label>
+          </div>
+          <div nz-form-control nz-col [nzSpan]="3">
+            <nz-input [nzDisabled]="!udpportscan_check" name="udpportscan_prune_quanta" [(ngModel)]="udpportscan_prune_quanta" [nzPlaceHolder]="'请输入'" ></nz-input>
+          </div>
+        </div>
+      </nz-collapse>
+    </nz-collapseset>
+    <div nz-row style="margin-top: 20px;">
+      <div nz-col [nzSpan]="2" style="padding: 0 16px;">
+        <button nz-button [nzType]="'primary'" (click)="refresh()"><span>确定</span></button>
+      </div>
+    </div>
+  </form>
+</div>
