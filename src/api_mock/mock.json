@@ -6,24 +6,24 @@
         {
           "x": 0,
           "y": 1,
-          "area": 2,
+          "area": 1,
           "widget": "app-version-widget"
         },
         {
-          "x": 0,
-          "y": 2,
+          "x": 1,
+          "y": 1,
           "area": 2,
           "widget": "app-interface-widget"
         },
         {
-          "x": 1,
+          "x": 2,
           "y": 0,
-          "area": 2,
+          "area": 1,
           "widget": "app-table-widget"
         },
         {
-          "x": 2,
-          "y": 1,
+          "x": 1,
+          "y": 0,
           "area": 1,
           "widget": "app-ul-widget"
         },
